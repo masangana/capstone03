@@ -1,18 +1,16 @@
-import React from 'react';
-import { Route, Routes } from 'react-router-dom';
-import Header from './components/Header';
-import Home from './components/Home';
-import './App.css';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import LoadingBar from 'react-redux-loading-bar';
+import Home from './components/home/Home';
+import Details from './components/details/Details';
 
-function App() {
-  return (
-    <div className="App">
-      <Header />
-      <Routes>
-        <Route path="/" element={<Home />} />
-      </Routes>
-    </div>
-  );
-}
+const App = () => (
+  <Router>
+    <LoadingBar className="App-loading-bar" />
+    <Routes>
+      <Route path="/" element={<Home />} />
+      <Route path="/country/:name" element={<Details />} />
+    </Routes>
+  </Router>
+);
 
 export default App;
