@@ -1,14 +1,15 @@
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchCountries } from '../../redux/countries/countries';
-import Icon from '../Icon';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faArrowLeft, faGear, faMicrophone } from '@fortawesome/free-solid-svg-icons';
 import formatNumber from '../utils/formatNumber';
 import './Home.css';
-import map from '../../assets/europe.png';
+import map from '../../assets/afric.png';
 import Grid from './Grid';
 
 const Home = () => {
-  const continent = 'Europe';
+  const continent = 'Africa';
 
   const dispatch = useDispatch();
   const { items, totalConfirmed, loading } = useSelector((state) => ({
@@ -29,12 +30,12 @@ const Home = () => {
   return (
     <section>
       <header className="App-header">
-        <Icon name="arrow_back_ios" />
+        <FontAwesomeIcon icon={faArrowLeft} />
         <h4>2021</h4>
         <h5 className="App-header-title">most views</h5>
-        <Icon name="mic" />
+        <FontAwesomeIcon icon={faMicrophone} />
         <div className="pl-5">
-          <Icon name="settings" />
+          <FontAwesomeIcon icon={faGear} />
         </div>
       </header>
       <div className="Home-banner">

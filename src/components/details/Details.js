@@ -3,7 +3,8 @@ import { useDispatch, useSelector } from 'react-redux';
 import { Link, useParams } from 'react-router-dom';
 import { fetchCountry } from '../../redux/countries/countries';
 import formatNumber from '../utils/formatNumber';
-import Icon from '../Icon';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faArrowLeft, faGear, faMicrophone } from '@fortawesome/free-solid-svg-icons';
 import image from '../../assets/virus.svg';
 import './Details.css';
 
@@ -30,12 +31,12 @@ const Details = () => {
     <section>
       <header className="App-header">
         <Link to="/">
-          <Icon name="arrow_back_ios" />
+          <FontAwesomeIcon icon={faArrowLeft} />
         </Link>
         <h5 className="App-header-title">town/city views</h5>
-        <Icon name="mic" />
+        <FontAwesomeIcon icon={faMicrophone} />
         <div className="pl-5">
-          <Icon name="settings" />
+          <FontAwesomeIcon icon={faGear} />
         </div>
       </header>
       <div className="Details-banner">
@@ -63,7 +64,7 @@ const Details = () => {
                   {' '}
                   cases
                 </p>
-                <Icon name="arrow_circle_right" />
+                <FontAwesomeIcon icon={faArrowLeft} />
               </div>
             </li>
           ))}

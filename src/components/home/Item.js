@@ -1,5 +1,6 @@
 import PropTypes from 'prop-types';
-import Icon from '../Icon';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faArrowAltCircleRight } from '@fortawesome/free-solid-svg-icons';
 import formatNumber from '../utils/formatNumber';
 import './Home.css';
 import virus from '../../assets/virus.svg';
@@ -7,7 +8,7 @@ import virus from '../../assets/virus.svg';
 const Item = ({ confirmed, name }) => (
   <div className="Home-item-content">
     <div className="Home-item-icon">
-      <Icon name="arrow_circle_right" />
+      <FontAwesomeIcon icon={faArrowAltCircleRight} />
     </div>
     <div className="Home-item-top">
       <img src={virus} alt="virus view" className="Home-item-image" />
