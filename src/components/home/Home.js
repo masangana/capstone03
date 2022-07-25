@@ -6,7 +6,9 @@ import { faArrowLeft, faGear, faMicrophone } from '@fortawesome/free-solid-svg-i
 import formatNumber from '../utils/formatNumber';
 import Select from 'react-select';
 import './Home.css';
-import map from '../../assets/afric.png';
+import Africa from '../../assets/afric.png';
+import Europe from '../../assets/europe.png';
+import Asia from '../../assets/europe.png';
 import Grid from './Grid';
 
 const optionSelect = [
@@ -18,18 +20,24 @@ const optionSelect = [
   { value: 'South America', label: 'South America' },
 ];
 let continent = 'Africa';
+let map = Africa;
 
 const Home = () => {
   const [selected, setSelected] = useState(optionSelect[0].value);
   
   const handleChange = event => {
-    console.log('change2 '+event.target.value);
     setSelected(event.target.value);
     continent = event.target.value;
     dispatch(fetchCountries(continent));
+    if (event.target.value === 'Africa') {
+      map = Africa;
+    }else if (event.target.value === 'Asia') {
+      map = Asia;
+    }else if (event.target.value === 'Europe') {
+      map = Europe;
+    }
   };
 
-  console.log('change '+continent);
   const dispatch = useDispatch();
   const { items, totalConfirmed, loading } = useSelector((state) => ({
     ...state.countries,
@@ -46,17 +54,6 @@ const Home = () => {
     return null;
   }
 
-  function customTheme(theme) {
-    return {
-      ...theme,
-      colors: {
-        ...theme.colors,
-        primary: 'red',
-        primary25: 'green',
-      },
-    }
-  }
-
   return (
     <section>
       <header className="App-header">
@@ -64,7 +61,7 @@ const Home = () => {
         <h4>2022</h4>
         <h5 className="App-header-title">most views</h5>
        
-        <select value={selected} onChange={handleChange}>
+        <select value={selected} onChange={handleChange} className="App-header-select">
           {optionSelect.map(option => (
             <option key={option.value} value={option.value}>
               {option.text}
