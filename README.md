@@ -18,6 +18,11 @@
 
 [Demo link](https://frabjous-bienenstitch-c3048c.netlify.app/)
 
+## Loom Video 🔗
+
+[Loom Video](https://www.loom.com/share/f0cfce89d0714aaf905a1a28c08c47cf)
+
+
 ## Getting Started
 
 To get a local copy up and running follow these simple steps.
