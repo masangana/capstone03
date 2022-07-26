@@ -6,6 +6,7 @@ import formatNumber from '../utils/formatNumber';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowLeft, faCity, faGear, faMicrophone } from '@fortawesome/free-solid-svg-icons';
 import image from '../../assets/virus.svg';
+import Moment from 'moment';
 import './Details.css';
 
 const Details = () => {
@@ -130,9 +131,9 @@ const Details = () => {
           </h6>
           <h6 className="App-section-title">
             Last Update :
-            {` `+`${formatNumber(
+            {` `+`${Moment(
                 All.updated,
-              )}`}
+              ).format('d MMM YYYY')}`}
           </h6>
         </section>
       </section>

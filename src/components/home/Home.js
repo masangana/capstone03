@@ -2,7 +2,7 @@ import { useEffect, useState, useRef  } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchCountries } from '../../redux/countries/countries';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faArrowLeft, faGear, faMicrophone } from '@fortawesome/free-solid-svg-icons';
+import { faArrowLeft, faGear, faGlobe, faMap, faMicrophone } from '@fortawesome/free-solid-svg-icons';
 import formatNumber from '../utils/formatNumber';
 import './Home.css';
 import Africa from '../../assets/afric.png';
@@ -65,7 +65,7 @@ const Home = () => {
   return (
     <section>
       <header className="App-header">
-        <FontAwesomeIcon icon={faArrowLeft} />
+        <FontAwesomeIcon icon={faGlobe} />
         <h4>2022</h4>
         <h5 className="App-header-title">
         <select value={selected} onChange={handleChange} className="App-header-select">
