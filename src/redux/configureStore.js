@@ -1,8 +1,7 @@
 import { configureStore } from '@reduxjs/toolkit';
 import logger from 'redux-logger';
 import { loadingBarReducer } from 'react-redux-loading-bar';
-import countriesReducer, {fetchCountries} from './countries/countries';
-
+import countriesReducer, { fetchCountries } from './countries/countries';
 
 const store = configureStore({
   reducer: {

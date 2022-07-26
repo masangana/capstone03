@@ -14,9 +14,10 @@ const MockNav = () => (
 test('renders correctly', () => {
   const tree = renderer
     .create(
-    <Provider store={store}>
+      <Provider store={store}>
         <MockNav />
-    </Provider>)
+      </Provider>,
+    )
     .toJSON();
   expect(tree).toMatchSnapshot();
 });

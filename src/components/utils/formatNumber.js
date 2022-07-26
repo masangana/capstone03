@@ -1,4 +1,4 @@
-const n = String;
+// const n = String;
 
 const formatNumber = (n) => n.toLocaleString('en-US');
 

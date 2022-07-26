@@ -1,8 +1,8 @@
-import { useEffect, useState, useRef  } from 'react';
+import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { fetchCountries } from '../../redux/countries/countries';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faGear, faGlobe, faMicrophone } from '@fortawesome/free-solid-svg-icons';
+import { fetchCountries } from '../../redux/countries/countries';
 import formatNumber from '../utils/formatNumber';
 import './Home.css';
 import Africa from '../../assets/afric.png';
@@ -14,6 +14,7 @@ import Oceania from '../../assets/oceani.png';
 import Grid from './Grid';
 
 const optionSelect = [
+  { value: '', label: 'Filter' },
   { value: 'Africa', label: 'Africa' },
   { value: 'Asia', label: 'Asia' },
   { value: 'Europe', label: 'Europe' },
@@ -26,31 +27,31 @@ let map = Africa;
 
 const Home = () => {
   const [selected, setSelected] = useState(optionSelect[0].value);
-  
-  const handleChange = event => {
-    setSelected(event.target.value);
-    continent = event.target.value;
-    dispatch(fetchCountries(continent));
-    if (event.target.value === 'Africa') {
-      map = Africa;
-    }else if (event.target.value === 'Asia') {
-      map = Asia;
-    }else if (event.target.value === 'Europe') {
-      map = Europe;
-    }else if (event.target.value === 'North America') {
-      map = NorthAmerica;
-    }else if (event.target.value === 'Oceania') {
-      map = Oceania;
-    }else if (event.target.value === 'South America') {
-      map = SouthAmerica;
-    }
-  };
 
   const dispatch = useDispatch();
   const { items, totalConfirmed, loading } = useSelector((state) => ({
     ...state.countries,
     loading: state.loadingBar.default,
   }));
+
+  const handleChange = (event) => {
+    setSelected(event.target.value);
+    continent = event.target.value;
+    dispatch(fetchCountries(continent));
+    if (event.target.value === 'Africa') {
+      map = Africa;
+    } else if (event.target.value === 'Asia') {
+      map = Asia;
+    } else if (event.target.value === 'Europe') {
+      map = Europe;
+    } else if (event.target.value === 'North America') {
+      map = NorthAmerica;
+    } else if (event.target.value === 'Oceania') {
+      map = Oceania;
+    } else if (event.target.value === 'South America') {
+      map = SouthAmerica;
+    }
+  };
 
   useEffect(() => {
     if (!items.length) {
@@ -68,14 +69,14 @@ const Home = () => {
         <FontAwesomeIcon icon={faGlobe} />
         <h4>2022</h4>
         <h5 className="App-header-title">
-        <select value={selected} onChange={handleChange} className="App-header-select">
-          {optionSelect.map(option => (
-            <option key={option.value} value={option.value}>
-              {option.label}
-            </option>
-          ))}
-        </select>
-        </h5>  
+          <select value={selected} onChange={handleChange} className="App-header-select">
+            {optionSelect.map((option) => (
+              <option key={option.value} value={option.value}>
+                {option.label}
+              </option>
+            ))}
+          </select>
+        </h5>
 
         <FontAwesomeIcon icon={faMicrophone} />
         <div className="pl-5">

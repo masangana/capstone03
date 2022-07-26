@@ -53,4 +53,3 @@ test('should handle adding selected country', () => {
     selected: data,
   });
 });
-

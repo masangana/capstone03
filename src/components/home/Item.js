@@ -20,7 +20,7 @@ const Item = ({ confirmed, name }) => (
 );
 
 Item.propTypes = {
-  confirmed: PropTypes.number,
+  confirmed: PropTypes.number.isRequired,
   name: PropTypes.string.isRequired,
 };
 
