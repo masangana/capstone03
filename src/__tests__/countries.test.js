@@ -1,4 +1,4 @@
-import reducer, { loadCountries, loadCountry } from './countries';
+import reducer, { loadCountries, loadCountry } from '../redux/countries/countries';
 
 test('should return the initial state', () => {
   const initialState = {
@@ -53,3 +53,4 @@ test('should handle adding selected country', () => {
     selected: data,
   });
 });
+

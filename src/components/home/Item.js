@@ -1,7 +1,6 @@
 import PropTypes from 'prop-types';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowAltCircleRight } from '@fortawesome/free-solid-svg-icons';
-import formatNumber from '../utils/formatNumber';
 import './Home.css';
 import virus from '../../assets/virus.svg';
 
@@ -15,13 +14,13 @@ const Item = ({ confirmed, name }) => (
     </div>
     <div className="Home-item-bottom">
       <h4 className="App-title">{name}</h4>
-      <p className="App-subtitle">{formatNumber(confirmed)}</p>
+      <p className="App-subtitle">{confirmed}</p>
     </div>
   </div>
 );
 
 Item.propTypes = {
-  confirmed: PropTypes.number.isRequired,
+  confirmed: PropTypes.number,
   name: PropTypes.string.isRequired,
 };
 

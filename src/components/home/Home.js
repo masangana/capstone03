@@ -2,7 +2,7 @@ import { useEffect, useState, useRef  } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchCountries } from '../../redux/countries/countries';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faArrowLeft, faGear, faGlobe, faMap, faMicrophone } from '@fortawesome/free-solid-svg-icons';
+import { faGear, faGlobe, faMicrophone } from '@fortawesome/free-solid-svg-icons';
 import formatNumber from '../utils/formatNumber';
 import './Home.css';
 import Africa from '../../assets/afric.png';

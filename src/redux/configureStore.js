@@ -1,13 +1,17 @@
-import { createStore, combineReducers, applyMiddleware } from 'redux';
+import { configureStore } from '@reduxjs/toolkit';
+import logger from 'redux-logger';
 import { loadingBarReducer } from 'react-redux-loading-bar';
-import thunk from 'redux-thunk';
-import countriesReducer from './countries/countries';
+import countriesReducer, {fetchCountries} from './countries/countries';
 
-const reducer = combineReducers({
-  countries: countriesReducer,
-  loadingBar: loadingBarReducer,
+
+const store = configureStore({
+  reducer: {
+    loadingBar: loadingBarReducer,
+    countries: countriesReducer,
+  },
+  middleware: (getDefaultMiddleware) => getDefaultMiddleware().concat(logger),
 });
 
-const store = createStore(reducer, applyMiddleware(thunk));
+store.dispatch(fetchCountries());
 
 export default store;
