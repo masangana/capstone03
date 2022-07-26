@@ -33,7 +33,7 @@ const Details = () => {
         <Link to="/">
           <FontAwesomeIcon icon={faArrowLeft} />
         </Link>
-        <h5 className="App-header-title">town/city views</h5>
+        <h5 className="App-header-title">view Detailed</h5>
         <FontAwesomeIcon icon={faMicrophone} />
         <div className="pl-5">
           <FontAwesomeIcon icon={faGear} />
@@ -53,7 +53,7 @@ const Details = () => {
         </div>
       </div>
       <section className="Home-stats">
-        <h5 className="App-section-title">CITY/TOWN BREAKDOWN - 2021</h5>
+        <h5 className="App-section-title">DATA in CITY - 2022</h5>
         <ul>
           {list.map(([name, { confirmed }]) => (
             <li key={name} className="Details-item">

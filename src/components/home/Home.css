@@ -29,12 +29,21 @@ ul {
   padding: 0;
 }
 
+.Home-grid-item {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
 .Home-grid-item:hover {
   opacity: 0.5;
 }
 
 .Home-grid-item:nth-child(4n + 2),
 .Home-grid-item:nth-child(4n + 3) {
+  border: blue solid 2px;
   background-color: rgba(0, 0, 0, 0.08);
 }
 

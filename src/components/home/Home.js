@@ -4,11 +4,13 @@ import { fetchCountries } from '../../redux/countries/countries';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowLeft, faGear, faMicrophone } from '@fortawesome/free-solid-svg-icons';
 import formatNumber from '../utils/formatNumber';
-import Select from 'react-select';
 import './Home.css';
 import Africa from '../../assets/afric.png';
 import Europe from '../../assets/europe.png';
-import Asia from '../../assets/europe.png';
+import Asia from '../../assets/asia.png';
+import NorthAmerica from '../../assets/americaN.png';
+import SouthAmerica from '../../assets/americaS.png';
+import Oceania from '../../assets/oceani.png';
 import Grid from './Grid';
 
 const optionSelect = [
@@ -35,6 +37,12 @@ const Home = () => {
       map = Asia;
     }else if (event.target.value === 'Europe') {
       map = Europe;
+    }else if (event.target.value === 'North America') {
+      map = NorthAmerica;
+    }else if (event.target.value === 'Oceania') {
+      map = Oceania;
+    }else if (event.target.value === 'South America') {
+      map = SouthAmerica;
     }
   };
 
@@ -59,15 +67,15 @@ const Home = () => {
       <header className="App-header">
         <FontAwesomeIcon icon={faArrowLeft} />
         <h4>2022</h4>
-        <h5 className="App-header-title">most views</h5>
-       
+        <h5 className="App-header-title">
         <select value={selected} onChange={handleChange} className="App-header-select">
           {optionSelect.map(option => (
             <option key={option.value} value={option.value}>
-              {option.text}
+              {option.label}
             </option>
           ))}
         </select>
+        </h5>  
 
         <FontAwesomeIcon icon={faMicrophone} />
         <div className="pl-5">
