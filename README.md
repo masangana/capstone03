@@ -52,7 +52,7 @@ Clone the repository using the GitHub link provided below.
 In the terminal, go to your file directory and run this command.
 
 ```
-$ git clone git@github.com:mavericks-db/math-magicians.git
+$ gh repo clone masangana/capstone03
 ```
 
 ### Usage
@@ -94,7 +94,7 @@ Please find the link in the Live Demo section.
 
 Contributions, issues, and feature requests are welcome!
 
-Feel free to check the [issues page](https://github.com/mavericks-db/math-magicians/issues).
+Feel free to check the [issues page](https://github.com/masangana/capstone03/issues).
 
 ## Show your support
 
