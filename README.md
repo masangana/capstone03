@@ -104,6 +104,7 @@ Give a ⭐️ if you like this project!
 
 - [Microverse](https://www.microverse.org/)
 - [Icon link](https://www.flaticon.com/fr/icones-gratuites/covid)
+- [Original design idea by Nelson Sakwa on Behance.](https://www.behance.net/sakwadesignstudio)
 - Code Reviewers
 - Coding Partners
 

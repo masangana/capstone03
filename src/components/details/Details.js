@@ -21,7 +21,6 @@ const Details = () => {
 
   useEffect(() => {
     dispatch(fetchCountry(name));
-    // fetchCountry(name);
   }, []);
 
   if (loading || !country) {
